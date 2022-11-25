@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import com.lstojak.myalarm.R
 import com.lstojak.myalarm.databinding.ActivityMainBinding
 import com.lstojak.myalarm.model.Area
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(findViewById(com.lstojak.myalarm.R.id.am_toolbar))
+        setSupportActionBar(findViewById(R.id.am_toolbar))
         binding.toolbarLayout.title = title
 
         armAction()
@@ -32,16 +33,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun armAction() {
-        val armBtn: ImageButton = findViewById(com.lstojak.myalarm.R.id.img_lock_btn)
+        val armBtn: ImageButton = findViewById(R.id.img_lock_btn1)
+
+//        val  viewPos : View = findViewById(R.id.myCoordinatorLayout);
+
 
         armBtn.setOnClickListener { view ->
             Snackbar.make(view, "Arming", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
+
+//            Snackbar.make(viewPos, R.string.app_name, Snackbar.LENGTH_LONG)
+//                .show();
+
         }
     }
 
     fun disarmAction() {
-        val disarmBtn: ImageButton = findViewById(com.lstojak.myalarm.R.id.img_unlock_btn)
+        val disarmBtn: ImageButton = findViewById(com.lstojak.myalarm.R.id.img_unlock_btn1)
 
         disarmBtn.setOnClickListener { view ->
             Toast.makeText(this, "Disarming", Toast.LENGTH_SHORT).show()

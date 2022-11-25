@@ -7,12 +7,397 @@
         tools:showIn="@layout/activity_settings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.SettingsActivity">
+        tools:context=".activity.SettingsActivity"
+        android:contentDescription="@string/settings">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text"/>
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:text="@string/alarm_phone_number"/>
+
+                <EditText
+                        android:id="@+id/alarmPhoneNumber"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_margin="10sp"
+                        android:hint="Enter phone number"
+                        android:minHeight="48dp"/>
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/area_name"/>
+
+                    <EditText
+                            android:id="@+id/areaName1"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter area name"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/arm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/armMsg1"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter arm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/disarm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/disarmMsg1"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter disarm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <CheckBox
+                            android:text="@string/enabled"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enabled1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/area_name"/>
+
+                    <EditText
+                            android:id="@+id/areaName2"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter area name"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/arm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/armMsg2"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter arm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/disarm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/disarmMsg2"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter disarm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <CheckBox
+                            android:text="@string/enabled"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enabled2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/area_name"/>
+
+                    <EditText
+                            android:id="@+id/areaName3"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter area name"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/arm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/armMsg3"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter arm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/disarm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/disarmMsg3"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter disarm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <CheckBox
+                            android:text="@string/enabled"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enabled3"/>
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/area_name"/>
+
+                    <EditText
+                            android:id="@+id/areaName4"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter area name"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/arm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/armMsg4"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter arm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/disarm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/disarmMsg4"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter disarm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <CheckBox
+                            android:text="@string/enabled"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enabled4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/area_name"/>
+
+                    <EditText
+                            android:id="@+id/areaName5"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter area name"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/arm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/armMsg5"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter arm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+
+                    <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/disarm_sms_message"/>
+
+                    <EditText
+                            android:id="@+id/disarmMsg5"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter disarm sms message"
+                            android:textSize="16sp"
+                            android:minHeight="48dp"
+                            android:layout_marginLeft="15dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <CheckBox
+                            android:text="@string/enabled"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enabled5"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.core.widget.NestedScrollView>

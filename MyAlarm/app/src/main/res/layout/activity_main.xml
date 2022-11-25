@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 app:toolbarId="@+id/am_toolbar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="#136A17">
+                app:contentScrim="#FF6200EE">
 
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/am_toolbar"

@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 app:toolbarId="@+id/sa_toolbar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="?attr/colorPrimary">
+                app:contentScrim="#FF6200EE">
 
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/sa_toolbar"

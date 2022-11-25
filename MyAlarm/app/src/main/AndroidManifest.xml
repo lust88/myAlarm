@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.lstojak.myalarm">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_my_alarm"
@@ -9,6 +11,11 @@
             android:roundIcon="@mipmap/ic_my_alarm"
             android:supportsRtl="true"
             android:theme="@style/Theme.MyAlarm">
+        <service
+                android:name=".MyService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
 
         <activity
                 android:name=".activity.MainActivity"
@@ -21,14 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.SettingsActivity"
-                  android:label="@string/app_name"
-                  android:theme="@style/Theme.MyAlarm.NoActionBar">
-
+        <activity
+                android:name=".activity.SettingsActivity"
+                android:label="@string/app_name"
+                android:theme="@style/Theme.MyAlarm.NoActionBar">
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

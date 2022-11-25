@@ -7,9 +7,14 @@
 
     <string name="settings">Settings</string>
 
-    <string name="large_text">
-        DOM
+    <string name="large_text">DOM</string>
 
-    </string>
+    <string name="enabled">Enabled</string>
+
+    <string name="alarm_phone_number">Alarm phone number</string>
+    <string name="area_name">Area name</string>
+    <string name="arm_sms_message">Arm sms message</string>
+    <string name="disarm_sms_message">Disarm sms message</string>
+
     <string name="action_settings">Settings</string>
 </resources>
