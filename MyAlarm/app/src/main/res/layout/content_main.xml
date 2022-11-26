@@ -15,15 +15,14 @@
 
         <TableRow android:id="@+id/row1"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:visibility="visible">
+                  android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
-                    android:text="@string/large_text"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:id="@+id/tv_area_name1"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -32,7 +31,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/lock"
-                    android:id="@+id/img_lock_btn1"/>
+                    android:id="@+id/arm_btn1"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -41,20 +40,19 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/unlock"
-                    android:id="@+id/img_unlock_btn1"/>
+                    android:id="@+id/disarm_btn1"/>
         </TableRow>
 
         <TableRow android:id="@+id/row2"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:visibility="invisible">
+                  android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
-                    android:text="GARAZ"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:id="@+id/tv_area_name2"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -63,7 +61,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/lock"
-                    android:id="@+id/img_lock_btn2"/>
+                    android:id="@+id/arm_btn2"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -72,20 +70,19 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/unlock"
-                    android:id="@+id/img_unlock_btn2"/>
+                    android:id="@+id/disarm_btn2"/>
         </TableRow>
 
         <TableRow android:id="@+id/row3"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:visibility="invisible">
+                  android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
-                    android:text="DOM DOM DOM"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:id="@+id/tv_area_name3"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -94,7 +91,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/lock"
-                    android:id="@+id/img_lock_btn3"/>
+                    android:id="@+id/arm_btn3"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -103,20 +100,19 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/unlock"
-                    android:id="@+id/img_unlock_btn3"/>
+                    android:id="@+id/disarm_btn3"/>
         </TableRow>
 
         <TableRow android:id="@+id/row4"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:visibility="invisible">
+                  android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
-                    android:text="@string/large_text"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:id="@+id/tv_area_name4"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -125,7 +121,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/lock"
-                    android:id="@+id/img_lock_btn4"/>
+                    android:id="@+id/arm_btn4"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -134,20 +130,19 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/unlock"
-                    android:id="@+id/img_unlock_btn4"/>
+                    android:id="@+id/disarm_btn4"/>
         </TableRow>
 
         <TableRow android:id="@+id/row5"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:visibility="invisible">
+                  android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/text_margin"
-                    android:text="@string/large_text"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:id="@+id/tv_area_name5"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -156,7 +151,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/lock"
-                    android:id="@+id/img_lock_btn5"/>
+                    android:id="@+id/arm_btn5"/>
 
             <ImageButton
                     android:layout_width="60dp"
@@ -165,7 +160,7 @@
                     android:layout_marginRight="5dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/unlock"
-                    android:id="@+id/img_unlock_btn5"/>
+                    android:id="@+id/disarm_btn5"/>
         </TableRow>
 
     </TableLayout>

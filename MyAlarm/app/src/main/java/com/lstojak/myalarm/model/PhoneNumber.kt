@@ -1,3 +1,3 @@
 package com.lstojak.myalarm.model
 
-class PhoneNumber (var id: Int, val phoneNumber: String)
+class PhoneNumber (var id: Int, var value: String?)

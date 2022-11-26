@@ -1,3 +1,3 @@
 package com.lstojak.myalarm.model
 
-class Area (var id: Int, val name: String, val armCommand: String, disarmCommand: String, enabled: Int)
+class Area (var id: Int, var name: String?, var armCommand: String?, var disarmCommand: String?, var enabled: Int)
