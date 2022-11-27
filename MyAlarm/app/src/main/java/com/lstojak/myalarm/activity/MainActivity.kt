@@ -15,7 +15,6 @@ import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
 import com.lstojak.myalarm.R.id
 import com.lstojak.myalarm.databinding.ActivityMainBinding
 import com.lstojak.myalarm.model.Area
@@ -26,7 +25,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        private val SMS_PERMISSION_CONSTANT = 100
+        private val SMS_PERMISSION_CONSTANT = 101
     }
 
     private lateinit var binding : ActivityMainBinding
@@ -48,11 +47,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initAreas() {
-//        val area1 = Area(1, "DOM", "123", "321", 1)
-//        val area2 = Area(2, "Garaz", "567", "765", 0)
-//
-//        areas = mapOf(1 to area1, 2 to area2)
-
         var phoneNumber : PhoneNumber = dbHelper.readPhoneNumber();
 
         val areaList : List<Area> = dbHelper.readAreas()
@@ -171,10 +165,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkPermissionToSendSms() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_DENIED) {
+            if (checkSelfPermission(Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED
+            ) {
                 Log.d("permission", "permission denied to SEND_SMS - requesting it")
-                val permissions = arrayOf<String>(Manifest.permission.SEND_SMS)
+                val permissions = arrayOf(Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS,
+                    Manifest.permission.RECEIVE_SMS)
                 requestPermissions(permissions, SMS_PERMISSION_CONSTANT)
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == SMS_PERMISSION_CONSTANT) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this,"SMS Receiver permission accepted!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this,"SMS Receiver permission denied!", Toast.LENGTH_SHORT).show()
             }
         }
     }

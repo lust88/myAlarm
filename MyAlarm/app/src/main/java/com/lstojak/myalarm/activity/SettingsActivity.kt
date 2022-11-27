@@ -2,20 +2,16 @@ package com.lstojak.myalarm.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.service.autofill.Validators.or
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.lstojak.myalarm.R
-import com.lstojak.myalarm.databinding.ActivityMainBinding
 import com.lstojak.myalarm.databinding.ActivitySettingsBinding
 import com.lstojak.myalarm.model.Area
 import com.lstojak.myalarm.model.PhoneNumber
 import com.lstojak.myalarm.util.DbHelper
-import java.util.*
 
 class SettingsActivity : AppCompatActivity() {
 
