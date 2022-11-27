@@ -5,13 +5,9 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.provider.ContactsContract.CommonDataKinds.Phone
-import android.provider.SimPhonebookContract.SimRecords.PHONE_NUMBER
 import androidx.core.database.getStringOrNull
 import com.lstojak.myalarm.model.Area
 import com.lstojak.myalarm.model.PhoneNumber
-import com.lstojak.myalarm.service.SmsReceiver
-import kotlin.reflect.KParameter
 
 class DbHelper private constructor (context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -45,8 +41,6 @@ class DbHelper private constructor (context: Context) :
         private val AREA_NUMBER = 5
     }
 
-
-
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_PHONE_NUMBER_TABLE = StringBuilder("CREATE TABLE ").append(PHONE_NUMBER_TABLE)
             .append("(").append(ID).append(" INTEGER PRIMARY KEY,").append(VALUE).append(" TEXT)").toString()
@@ -55,15 +49,11 @@ class DbHelper private constructor (context: Context) :
             .append(" INTEGER PRIMARY KEY,").append(NAME).append(" TEXT,").append(ARM_CMD).append(" TEXT,")
             .append(DISARM_CMD).append(" TEXT,").append(ENABLED).append(" INTEGER)").toString()
 
-
-//        val db = this.writableDatabase
-
         db.execSQL(CREATE_PHONE_NUMBER_TABLE)
         db.execSQL(CREATE_AREA_TABLE)
 
         createEmptyPhoneNumberRow(db)
         createEmptyAreaRows(db, AREA_NUMBER)
-//        db.close()
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -163,9 +153,7 @@ class DbHelper private constructor (context: Context) :
     }
 
     private fun insertIntoDb(db: SQLiteDatabase, tableName: String, values: ContentValues) {
-//        val db = this.writableDatabase
         db.insert(tableName, null, values)
-//        db.close()
     }
 
     private fun updateDbData(db: SQLiteDatabase, id: String, tableName: String, values: ContentValues) {

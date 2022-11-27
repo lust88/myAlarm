@@ -1,6 +1,8 @@
 package com.lstojak.myalarm.activity
 
 import android.Manifest
+import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -15,10 +17,12 @@ import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import com.lstojak.myalarm.R.id
 import com.lstojak.myalarm.databinding.ActivityMainBinding
 import com.lstojak.myalarm.model.Area
 import com.lstojak.myalarm.model.PhoneNumber
+import com.lstojak.myalarm.service.SmsReceiverService
 import com.lstojak.myalarm.util.DbHelper
 import java.util.*
 
@@ -132,7 +136,7 @@ class MainActivity : AppCompatActivity() {
             checkPermissionToSendSms()
             SmsManager.getDefault().sendTextMessage(phoneNumber, null, armMsg, null, null)
 
-            Toast.makeText(this, "Arming", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Arming", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -143,7 +147,7 @@ class MainActivity : AppCompatActivity() {
             checkPermissionToSendSms()
             SmsManager.getDefault().sendTextMessage(phoneNumber, null, disarmMsg, null, null)
 
-            Toast.makeText(this, "Disarming", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Disarming", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -168,6 +172,7 @@ class MainActivity : AppCompatActivity() {
             if (checkSelfPermission(Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED
                 || checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED
                 || checkSelfPermission(Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.FOREGROUND_SERVICE) != PackageManager.PERMISSION_GRANTED
             ) {
                 Log.d("permission", "permission denied to SEND_SMS - requesting it")
                 val permissions = arrayOf(Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS,
@@ -181,10 +186,28 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == SMS_PERMISSION_CONSTANT) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this,"SMS Receiver permission accepted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"SMS Receiver permission accepted!", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this,"SMS Receiver permission denied!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"SMS Receiver permission denied!", Toast.LENGTH_LONG).show()
             }
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+//        if (isMyServiceRunning(SmsReceiverService::class.java)) {
+            startService(Intent(this, SmsReceiverService::class.java))
+//        }
+    }
+
+//    private fun isMyServiceRunning(serviceClass: Class<*>): Boolean {
+//        val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+//        for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+//            if (serviceClass.name == service.service.className) {
+//                return true
+//            }
+//        }
+//        return false
+//    }
+
 }

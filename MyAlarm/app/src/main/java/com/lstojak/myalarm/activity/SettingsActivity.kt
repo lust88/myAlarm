@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.lstojak.myalarm.R
@@ -19,7 +20,6 @@ class SettingsActivity : AppCompatActivity() {
 
     private var dbHelper : DbHelper = DbHelper.getInstance(this)
 
-//    private var phoneNumber: PhoneNumber = null
     private var areas : Map<Int, Area> = mapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -112,7 +112,6 @@ class SettingsActivity : AppCompatActivity() {
 
     fun backAction() {
         binding.saBackBtn.setOnClickListener {
-//            this.finish()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -149,8 +148,8 @@ class SettingsActivity : AppCompatActivity() {
 
             dbHelper.saveData(phoneNumber, areas)
 
-            Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT)
-                .setAction("Action", null).show()
+            Toast.makeText(this,"Saved", Toast.LENGTH_LONG).show()
+
         }
     }
 }
